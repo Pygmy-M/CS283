@@ -39,9 +39,11 @@ Please provide answers to these questions using markdown notation and place them
     - Clone URL : https://github.com/Pygmy-M/CS283.git
 
 4. Briefly describe what you want to get out of this class.
+
     Even though I've used it for classes, Linux systems where it's just me and the command line 
     have always scared me a little. I really want to start feeling genuinely comfortable programming 
     without the gooey interfaces that most code-writing programs provide.
 
 5. Briefly describe any concerns you might be having with being successful in this class (if any).
+
     I think everything is going to be good, but I reserve the right to change my mind if I start to struggle.
