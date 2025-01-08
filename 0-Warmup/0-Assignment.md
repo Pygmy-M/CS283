@@ -35,8 +35,8 @@ Please provide answers to these questions using markdown notation and place them
 
 
 3. Please provide a link to the repository you are using for this class.
-    Normal Link : https://github.com/Pygmy-M/CS283
-    Clone URL : https://github.com/Pygmy-M/CS283.git
+    - Normal Link : https://github.com/Pygmy-M/CS283
+    - Clone URL : https://github.com/Pygmy-M/CS283.git
 
 4. Briefly describe what you want to get out of this class.
     Even though I've used it for classes, Linux systems where it's just me and the command line 
