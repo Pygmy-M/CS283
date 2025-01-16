@@ -11,9 +11,9 @@ void print_buff(char *, int);
 int  setup_buff(char *, char *, int);
 
 //prototypes for functions to handle required functionality
-int  count_words(char *, int, int);
-int  reverse(char *, int, int);
-int  word_print(char *, int, int);
+int  count_words(char *, int);
+int  reverse(char *, int);
+int  word_print(char *, int);
 //add additional prototypes here
 
 
@@ -58,7 +58,7 @@ int setup_buff(char *buff, char *user_str, int len){
         
         tp++;
     }
-    memset(buff+cnt, '.', BUFFER_SZ-(cnt*sizeof(char))); //fill the rest of buff with '.'
+    memset(buff+cnt, '.', len-(cnt*sizeof(char))); //fill the rest of buff with '.'
     return cnt; 
 }
 
@@ -76,7 +76,7 @@ void usage(char *exename){
 
 }
 
-int count_words(char *buff, int len, int str_len){
+int count_words(char *buff, int str_len){
     int state_is_space = 1;
     int wcnt = 0;
     char *tp = buff;
@@ -96,7 +96,7 @@ int count_words(char *buff, int len, int str_len){
     return wcnt;
 }
 
-int  reverse(char *buff, int len, int str_len) {
+int  reverse(char *buff, int str_len) {
     char temp[BUFFER_SZ];
     memcpy(temp, buff, str_len); //create a temp char array that is a copy of buff
     int cnt = 0;
@@ -107,7 +107,7 @@ int  reverse(char *buff, int len, int str_len) {
     return 0;
 }
 
-int  word_print(char *buff, int len, int str_len) {
+int  word_print(char *buff, int str_len) {
     int state_is_space = 1;
     int start = 1;
     int wcnt = 0;
@@ -206,7 +206,7 @@ int main(int argc, char *argv[]){
 
     switch (opt){
         case 'c':
-            rc = count_words(buff, BUFFER_SZ, user_str_len); 
+            rc = count_words(buff, user_str_len); 
             if (rc < 0){
                 printf("Error counting words, rc = %d", rc);
                 exit(2);
@@ -215,7 +215,7 @@ int main(int argc, char *argv[]){
             break;
 
         case 'r':
-            rc = reverse(buff, BUFFER_SZ, user_str_len); 
+            rc = reverse(buff, user_str_len); 
             if (rc < 0){
                 printf("Error reversing, rc = %d", rc);
                 exit(2);
@@ -223,7 +223,7 @@ int main(int argc, char *argv[]){
             break;
         
         case 'w':
-            rc = word_print(buff, BUFFER_SZ, user_str_len);  
+            rc = word_print(buff, user_str_len);  
             if (rc < 0){
                 printf("Error printing words, rc = %d", rc);
                 exit(2);
